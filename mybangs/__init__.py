@@ -1,3 +1,5 @@
+from urllib.parse import quote_plus
+
 from flask import Flask, redirect, render_template, request
 
 from .config import Config
@@ -40,7 +42,9 @@ def create_app():
 
         query = request.args.get("q")
         if query is None:
-            return render_template("index.html", bangs=bangs, url=request.url)
+            return render_template(
+                "index.html", bangs=bangs, url=request.url, surl=quote_plus(request.url)
+            )
 
         # Check if the query has a bang
         elif " !" in query:
