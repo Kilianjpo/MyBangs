@@ -1,0 +1,124 @@
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0 0.5rem;
+  padding: 0;
+}
+
+h1 {
+  color: #e73166;
+  font-size: 3em;
+  margin: 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h1 img {
+  width: 5rem;
+  margin: -2rem;
+}
+
+h2 {
+  color: #fea3b5;
+  font-size: 2em;
+  margin: 0;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.social {
+  display: flex;
+  float: right;
+  margin-top: -1.5rem;
+  margin-right: 0.5rem;
+  width: 2rem;
+}
+
+.q {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+}
+
+.q input,
+.q input:focus {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0.5em 2rem;
+  width: 80vw;
+  text-align: center;
+  border: #ffccd7 0.25rem solid;
+  border-radius: 2rem;
+  outline: none;
+}
+
+.bangs {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bangscontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.bang {
+  font-size: 1em;
+  margin: 0.2rem;
+  padding: 0.2em 0.5rem;
+  width: 4rem;
+  text-align: center;
+  border: #ffccd7 0.2rem solid;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.engin {
+  font-size: 1em;
+  margin: 0.2rem 0.5rem;
+  padding: 0.2em 0.5rem;
+  width: max(12rem, 35vw);
+  text-align: center;
+  border: #ffccd7 0.2rem solid;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.bangaction {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bangaction button {
+  background-color: #e73166;
+  margin: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-top: 0.2rem;
+  text-align: center;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.warn {
+  background-color: #e73166;
+  text-align: center;
+  margin: 5rem max(10rem, 5vw);
+  padding: 2rem;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.warn a {
+  color: #fea3b5;
+  text-decoration: underline;
+}
+
+.warn h2 {
+  color: black;
+  text-decoration: underline;
+}

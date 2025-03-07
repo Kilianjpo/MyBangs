@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="3; {{ r_url }}" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='icon.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+    <title>MyBangs</title>
+  </head>
+  <body>
+    <a href="https://github.com/Kilianjpo/MyBangs" target="_blank">
+      <img
+        class="social"
+        src="{{ url_for('static', filename='github-mark.svg') }}"
+        alt="GitHub"
+      />
+    </a>
+    <h1>
+      MyBangs <img src="{{ url_for('static', filename='icon.png') }}" alt="" />
+    </h1>
+    <h2>Simple search wrapper✨<br />with customizable Bangs‼️</h2>
+    <div class="warn">
+      <h2>Invalid Bang</h2>
+      <p>It seems that the Bang you entered is invalid.</p>
+      <p>
+        You can configure or add Bangs
+        <a href="{{ url_for('index') }}">here</a>.
+      </p>
+      <p>
+        You search query wil be redirected to you default search provider in a
+        few seconds.
+      </p>
+      <p>
+        If you are not redirected automatically, follow this
+        <a href="{{ r_url }}">link</a>.
+      </p>
+    </div>
+  </body>
+</html>

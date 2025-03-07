@@ -1,0 +1,20 @@
+exclude = [
+    ".git",
+    ".venv",
+    ".vscode",
+    "__pycache__"
+]
+line-length = 100
+target-version = "py313"
+
+[lint]
+select = ["F", "E", "I", "N", "UP", "C4", "DTZ", "LOG", "G", "SIM", "PTH", "Q"]
+ignore = ["N999"]
+
+fixable = ["ALL"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+quote-style = "double"
+indent-style = "tab"
+line-ending = "auto"
