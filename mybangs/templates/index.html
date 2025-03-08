@@ -1,96 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      type="application/opensearchdescription+xml"
-      rel="search"
-      title="MyBangs"
-      href="https://osdgen.com/opensearch.osdx?short_name=MyBangs&amp;description=Simple%20search%20wrapper%E2%9C%A8%20with%20customizable%20Bangs%E2%80%BC%EF%B8%8F&amp;results_url={{ url }}q%3D%7BsearchTerms%7D&amp;suggestions_url=https%3A%2F%2Fduckduckgo.com%2Fac%2F%3Fq%3D%7BsearchTerms%7D%26type%3Dlist&amp;image=%2Fstatic%2Ficon.png"
-    />
-    <link
-      rel="shortcut icon"
-      href="{{ url_for('static', filename='icon.png') }}"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
-    <title>MyBangs</title>
-  </head>
-  <body>
-    <a href="https://github.com/Kilianjpo/MyBangs" target="_blank">
+{% extends 'base.html' %} {% block content %}
+<a href="https://github.com/Kilianjpo/MyBangs" target="_blank">
+  <img
+    class="social"
+    src="{{ url_for('static', filename='github-mark.svg') }}"
+    alt="GitHub"
+  />
+</a>
+<h1>
+  MyBangs <img src="{{ url_for('static', filename='icon.png') }}" alt="" />
+</h1>
+<h2>Simple search wrapper✨<br />with customizable Bangs‼️</h2>
+<form
+  class="q"
+  action="{{ url }}"
+  target="_blank"
+  onsubmit="appendQueryParams(event)"
+>
+  <input
+    type="text"
+    name="q"
+    placeholder="Search here...  !yt"
+    autocomplete="off"
+  />
+</form>
+<h1>Customize the&nbsp;💩</h1>
+<form class="bangs" id="bangs" action="{{ url_for('index') }}">
+  {% for bang in bangs%}
+  <div class="bangscontainer">
+    <input class="bang" type="text" name="bang" value="{{ bang }}" />
+    <input class="engin" type="text" name="engin" value="{{ bangs[bang] }}" />
+  </div>
+  {% endfor %}
+  <div class="bangaction">
+    <button onclick="javascript:return bangadd()">
       <img
-        class="social"
-        src="{{ url_for('static', filename='github-mark.svg') }}"
-        alt="GitHub"
+        class="icon"
+        src="{{ url_for('static', filename='plus.svg') }}"
+        alt=""
       />
-    </a>
-    <h1>
-      MyBangs <img src="{{ url_for('static', filename='icon.png') }}" alt="" />
-    </h1>
-    <h2>Simple search wrapper✨<br />with customizable Bangs‼️</h2>
-    <form
-      class="q"
-      action="{{ url }}"
-      target="_blank"
-      onsubmit="appendQueryParams(event)"
-    >
-      <input
-        type="text"
-        name="q"
-        placeholder="Search here...  !yt"
-        autocomplete="off"
+    </button>
+    <button type="submit">
+      <img
+        class="icon"
+        src="{{ url_for('static', filename='check.svg') }}"
+        alt=""
       />
-    </form>
-    <h1>Customize the&nbsp;💩</h1>
-    <form class="bangs" id="bangs" action="{{ url_for('index') }}">
-      {% for bang in bangs%}
-      <div class="bangscontainer">
-        <input class="bang" type="text" name="bang" value="{{ bang }}" />
-        <input
-          class="engin"
-          type="text"
-          name="engin"
-          value="{{ bangs[bang] }}"
-        />
-      </div>
-      {% endfor %}
-      <div class="bangaction">
-        <button onclick="javascript:return bangadd()">
-          <img
-            class="icon"
-            src="{{ url_for('static', filename='plus.svg') }}"
-            alt=""
-          />
-        </button>
-        <button type="submit">
-          <img
-            class="icon"
-            src="{{ url_for('static', filename='check.svg') }}"
-            alt=""
-          />
-        </button>
-      </div>
-    </form>
-    <h1>
-      Add MyBangs <br />
-      to your Browser 🚀
-    </h1>
-    <div class="centertext">
-      <p>Right-click the browser's URL bar and then click on "Add MyBangs".</p>
-      <p>
-        Set MyBangs as the default search engine in your browser's settings.
-      </p>
-      <p>
-        Start searching 💯 with your Bangs by typing your query followed by the
-        Bang.
-        <br />
-        For example, "MyBangs !gh" to search this project on GitHub.
-      </p>
-    </div>
-  </body>
-</html>
+    </button>
+  </div>
+</form>
+<h1>
+  Add MyBangs <br />
+  to your Browser 🚀
+</h1>
+<div class="centertext">
+  <p>Right-click the browser's URL bar and then click on "Add MyBangs".</p>
+  <p>Set MyBangs as the default search engine in your browser's settings.</p>
+  <p>
+    Start searching 💯 with your Bangs by typing your query followed by the
+    Bang.
+    <br />
+    For example, "MyBangs !gh" to search this project on GitHub.
+  </p>
+</div>
+{% endblock %}
