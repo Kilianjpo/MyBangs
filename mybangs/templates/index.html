@@ -1,4 +1,11 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% block head %}
+<link
+  type="application/opensearchdescription+xml"
+  rel="search"
+  title="MyBangs"
+  href="https://osdgen.com/opensearch.osdx?short_name=MyBangs&amp;description=Simple%20search%20wrapper%E2%9C%A8%20with%20customizable%20Bangs%E2%80%BC%EF%B8%8F&amp;results_url={{ url }}q%3D%7BsearchTerms%7D&amp;suggestions_url=https%3A%2F%2Fduckduckgo.com%2Fac%2F%3Fq%3D%7BsearchTerms%7D%26type%3Dlist&amp;image=%2Fstatic%2Ficon.png"
+/>
+{% endblock %} {% block content %}
 <a href="https://github.com/Kilianjpo/MyBangs" target="_blank">
   <img
     class="social"
