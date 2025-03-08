@@ -1,0 +1,8 @@
+services:
+  mybangs:
+    image: kilianjpo/mybangs:latest
+    ports:
+      - 8000:8000
+    environment:
+      - SECRET=""
+      - HOST=""
