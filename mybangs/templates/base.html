@@ -18,5 +18,17 @@
   </head>
   <body>
     {% block content %}{% endblock %}
+    <footer>
+      <p>Copyright (c) 2025 Kilian J. Popp</p>
+      <p>
+        Licensed under
+        <a
+          href="https://github.com/Kilianjpo/MyBangs/tree/master?tab=BSD-3-Clause-Clear-1-ov-file#readme"
+          >BSD-3-Clause-Clear</a
+        >
+      </p>
+      {% autoescape false %} {% if custom_footer %} {{ custom_footer }} {% endif
+      %} {% endautoescape %}
+    </footer>
   </body>
 </html>

@@ -25,7 +25,11 @@ def create_app():
 		query = request.args.get("q")
 		if query is None:
 			return render_template(
-				"index.html", bangs=bangs, url=request.url, surl=quote_plus(request.url)
+				"index.html",
+				bangs=bangs,
+				url=request.url,
+				surl=quote_plus(request.url),
+				custom_footer=app.config["CUSTOM_FOOTER"],
 			)
 
 		# Check if the query has a bang
@@ -37,7 +41,11 @@ def create_app():
 				return redirect(engin % query)
 			else:
 				# If the bang is not in the list, return a false bang page
-				return render_template("false_bang.html", r_url=bangs["Default"] % query)
+				return render_template(
+					"false_bang.html",
+					r_url=bangs["Default"] % query,
+					custom_footer=app.config["CUSTOM_FOOTER"],
+				)
 
 		# If the query has no bang, use the default engine
 		elif " !" not in query:

@@ -27,3 +27,4 @@ class Config:
 			},
 		)
 	)
+	CUSTOM_FOOTER = getenv("CUSTOM_FOOTER")
