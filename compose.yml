@@ -4,5 +4,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      - SECRET=""
-      - HOST=""
+      - SECRET="" #generate with openssl rand -hex 16
+      - HOST="" # for example mybangs.party
+      - DEFAULT_BANGS="" # something like {"Default": "https://www.google.com/search?q=%s", "gh": "https://github.com/search?q=%s"}
+      - CUSTOM_FOOTER="" # html code displayed in the footer
