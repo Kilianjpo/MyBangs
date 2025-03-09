@@ -1,4 +1,4 @@
-![MyBangs icon](https://raw.githubusercontent.com/Kilianjpo/MyBangs/refs/heads/master/mybangs/static/icon.png)
+<img width="200px" src="https://raw.githubusercontent.com/Kilianjpo/MyBangs/refs/heads/master/mybangs/static/icon.png" align="center" alt="GitHub Readme Stats" />
 
 # Mybangs
 
