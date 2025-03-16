@@ -18,3 +18,17 @@ function appendQueryParams(event) {
   });
   window.open(url.toString(), "_blank");
 }
+
+const browser = document.getElementById("browser");
+browser.addEventListener("change", (event) => {
+  if (event.currentTarget.checked) {
+    document.getElementById("tut").innerHTML =
+      '<p>Make sure you submited the form above.</p><p>Go to you browsers search settings.</p><p>Add the folowing url as search engin.</p><input class="engin" type="text" value="' +
+      window.location.href +
+      "&q=%s" +
+      '" /><p>Start searching 💯 with your Bangs by typing your query followed by the Bang.<br />For example, "MyBangs !gh" to search this project on GitHub.</p>';
+  } else {
+    document.getElementById("tut").innerHTML =
+      '<p>Make sure you submited the form above.</p><p>Right-click the browsers URL bar and then click on "Add MyBangs".</p><p>Set MyBangs as the default search engine in your browsers settings.</p><p>Start searching 💯 with your Bangs by typing your query followed by the Bang.<br />For example, "MyBangs !gh" to search this project on GitHub.</p>';
+  }
+});
