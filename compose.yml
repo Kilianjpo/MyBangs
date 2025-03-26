@@ -1,6 +1,6 @@
 services:
   mybangs:
-    image: kilianjpo/mybangs:latest
+    image: git.1horn.dev/kilian/mybangs:latest
     ports:
       - 8000:8000
     environment:

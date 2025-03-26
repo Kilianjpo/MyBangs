@@ -110,7 +110,7 @@ wheels = [
 
 [[package]]
 name = "mybangs"
-version = "0.1.0"
+version = "0.1.4"
 source = { virtual = "." }
 dependencies = [
     { name = "flask" },
