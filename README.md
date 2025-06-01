@@ -39,7 +39,7 @@ To install and run MyBangs using Docker, follow these steps:
    ```yaml
    services:
      mybangs:
-       image: git.1horn.dev/kilian/mybangs:latest
+       image: kilianjpo/mybangs:latest
        ports:
          - 8000:8000
        environment:
