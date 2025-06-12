@@ -14,6 +14,7 @@ def create_app():
 	def index():
 		bang = request.args.getlist("bang")
 		engin = request.args.getlist("engin")
+		query = request.args.get("q")
 
 		# If no bangs provided, use the default ones
 		if not bang and not engin:
@@ -22,7 +23,6 @@ def create_app():
 		elif bang and engin and len(bang) == len(engin):
 			bangs = dict(zip(bang, engin))  # Create a dictionary from the two lists
 
-		query = request.args.get("q")
 		if query is None:
 			return render_template(
 				"index.html",
@@ -38,17 +38,17 @@ def create_app():
 			query, bang = query.split(" !", 1)
 			if bang in bangs:
 				engin = bangs[bang]  # Get the engine from the bang
-				return redirect(engin % query)
+				return redirect(engin % quote_plus(query))
 			else:
 				# If the bang is not in the list, return a false bang page
 				return render_template(
 					"false_bang.html",
-					r_url=bangs["Default"] % query,
+					r_url=bangs["Default"] % quote_plus(query),
 					custom_footer=app.config["CUSTOM_FOOTER"],
 				)
 
 		# If the query has no bang, use the default engine
 		elif " !" not in query:
-			return redirect(bangs["Default"] % query)
+			return redirect(bangs["Default"] % quote_plus(query))
 
 	return app
