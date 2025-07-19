@@ -1,6 +1,6 @@
 [project]
 name = "mybangs"
-version = "0.1.5"
+version = "0.1.6"
 description = "Simple search wrapper✨ with customizable Bangs‼️"
 readme = "README.md"
 requires-python = ">=3.13"
