@@ -21,4 +21,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
        push: true
-       tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mybangs:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/mybangs:${{ github.event.release.tag_name }}
+       tags: ${{ secrets.DOCKERHUB_USERNAME }}/mybangs:latest, ${{ secrets.DOCKERHUB_USERNAME }}/mybangs:${{ github.event.release.tag_name }}
