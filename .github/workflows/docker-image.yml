@@ -11,6 +11,11 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v4
 
+    - name: Docker meta
+      uses: docker/metadata-action@v5
+      with:
+        images: kilianjpo/mybangs
+
     - name: Login to dockerhub
       uses: docker/login-action@v3
       with:
