@@ -1,6 +1,6 @@
 from urllib.parse import quote_plus
 
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, session
 
 from .config import Config
 
@@ -10,19 +10,32 @@ def create_app():
 	app = Flask(__name__, instance_relative_config=True)
 	app.config.from_object(Config)
 
+	# Make session permanent
+	@app.before_request
+	def make_session_permanent():
+		session.permanent = True
+
 	@app.route("/")
 	def index():
+		# Get parameters from the request
 		bang = request.args.getlist("bang")
 		engin = request.args.getlist("engin")
 		query = request.args.get("q")
 
+		# Use values from url parameters if provided
+		if bang and engin and len(bang) == len(engin):
+			bangs = dict(zip(bang, engin))  # Create a dictionary from the two lists
+			session["bangs"] = bangs  # Update session with url parameters
+
+		# If no bangs provided in the url, use the session bangs if available
+		elif "bangs" in session:
+			bangs = session["bangs"]
+
 		# If no bangs provided, use the default ones
-		if not bang and not engin:
+		elif not bang and not engin:
 			bangs = app.config["DEFAULT_BANGS"]
 
-		elif bang and engin and len(bang) == len(engin):
-			bangs = dict(zip(bang, engin))  # Create a dictionary from the two lists
-
+		# Return the index when no query is provided
 		if query is None:
 			return render_template(
 				"index.html",
