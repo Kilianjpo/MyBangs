@@ -34,6 +34,7 @@ def create_app():
 		# If no bangs provided, use the default ones
 		elif not bang and not engin:
 			bangs = app.config["DEFAULT_BANGS"]
+			session["bangs"] = bangs
 
 		# Return the index when no query is provided
 		if query is None:
