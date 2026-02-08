@@ -1,10 +1,10 @@
 [project]
 name = "mybangs"
-version = "0.2.1"
+version = "0.2.2"
 description = "Simple search wrapper✨ with customizable Bangs‼️"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["flask>=3.1.0", "gunicorn>=23.0.0"]
+dependencies = ["flask>=3.1.0", "gunicorn>=25.0.0"]
 
 [tool.ruff]
 exclude = [".git", ".venv", ".vscode", "__pypackages__"]
