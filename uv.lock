@@ -112,7 +112,7 @@ wheels = [
 
 [[package]]
 name = "mybangs"
-version = "0.2.1"
+version = "0.2.2"
 source = { virtual = "." }
 dependencies = [
     { name = "flask" },
@@ -122,7 +122,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "flask", specifier = ">=3.1.0" },
-    { name = "gunicorn", specifier = ">=23.0.0" },
+    { name = "gunicorn", specifier = ">=25.0.0" },
 ]
 
 [[package]]
