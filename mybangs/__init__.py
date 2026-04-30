@@ -1,4 +1,4 @@
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlsplit
 
 from flask import Flask, redirect, render_template, request, session
 
@@ -38,10 +38,11 @@ def create_app():
 
 		# Return the index when no query is provided
 		if query is None:
+			url = urlsplit(request.url)._replace(scheme=app.config["PREFERRED_URL_SCHEME"]).geturl()
 			return render_template(
 				"index.html",
 				bangs=bangs,
-				url=request.url,
+				url=url,
 				surl=quote_plus(request.url),
 				custom_footer=app.config["CUSTOM_FOOTER"],
 			)
