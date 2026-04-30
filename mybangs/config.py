@@ -5,6 +5,7 @@ class Config:
 	SECRET_KEY = getenv("SECRET")
 	SESSION_COOKIE_DOMAIN = getenv("HOST")
 	SERVER_NAME = getenv("HOST")
+	PREFERRED_URL_SCHEME = getenv("URL_SCHEME", "http")
 	DEFAULT_BANGS = dict(
 		getenv(
 			"DEFAULT_BANGS",

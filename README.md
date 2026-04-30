@@ -72,6 +72,12 @@ To install and run MyBangs using Docker, follow these steps:
       <td></td>
     </tr>
     <tr>
+      <td>URL_SCHEME</td>
+      <td>Set to https if you are using a reverse proxy with ssl</td>
+      <td>Yes</td>
+      <td>http</td>
+    </tr>
+    <tr>
       <td>DEFAULT_BANGS</td>
       <td>A Python Dictionary. Each key represents a bang the exclamation mark must be removed. The default key defines the search engine that will be used if no bang is specified.</td>
       <td>Yes</td>

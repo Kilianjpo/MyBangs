@@ -6,5 +6,6 @@ services:
     environment:
       - SECRET="" #generate with openssl rand -hex 16
       - HOST="" # for example mybangs.party
+      - URL_SCHEME="http" # or https if you have a reverse proxy with ssl
       - DEFAULT_BANGS="" # something like {"Default": "https://www.google.com/search?q=%s", "gh": "https://github.com/search?q=%s"}
       - CUSTOM_FOOTER="" # html code displayed in the footer
